@@ -1,0 +1,121 @@
+[gd_scene load_steps=2 format=3 uid="uid://djkotte0ovoe5"]
+
+[node name="BankPopup" type="Panel"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+modulate = Color(1, 1, 1, 0.9)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleBar" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="VBoxContainer/TitleBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "银行"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LoanTab" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LoanTitle" type="Label" parent="VBoxContainer/TabContainer/LoanTab"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "贷款选项"
+
+[node name="LoanOptions" type="VBoxContainer" parent="VBoxContainer/TabContainer/LoanTab"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LoanOption1" type="HBoxContainer" parent="VBoxContainer/TabContainer/LoanTab/LoanOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Loan1Info" type="Label" parent="VBoxContainer/TabContainer/LoanTab/LoanOptions/LoanOption1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "50W 1年（利率4.8%）"
+
+[node name="Loan1Button" type="Button" parent="VBoxContainer/TabContainer/LoanTab/LoanOptions/LoanOption1"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "选择"
+
+[node name="LoanOption2" type="HBoxContainer" parent="VBoxContainer/TabContainer/LoanTab/LoanOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Loan2Info" type="Label" parent="VBoxContainer/TabContainer/LoanTab/LoanOptions/LoanOption2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "100W 3年（利率4.2%）"
+
+[node name="Loan2Button" type="Button" parent="VBoxContainer/TabContainer/LoanTab/LoanOptions/LoanOption2"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "选择"
+
+[node name="LoanOption3" type="HBoxContainer" parent="VBoxContainer/TabContainer/LoanTab/LoanOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Loan3Info" type="Label" parent="VBoxContainer/TabContainer/LoanTab/LoanOptions/LoanOption3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "300W 5年（利率3.5%）"
+
+[node name="Loan3Button" type="Button" parent="VBoxContainer/TabContainer/LoanTab/LoanOptions/LoanOption3"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "选择"
+
+[node name="RepayTab" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RepayTitle" type="Label" parent="VBoxContainer/TabContainer/RepayTab"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "还款选项"
+
+[node name="RepayInfo" type="Label" parent="VBoxContainer/TabContainer/RepayTab"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "还款功能开发中..."
+
+[node name="Footer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/Footer"]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "关闭"

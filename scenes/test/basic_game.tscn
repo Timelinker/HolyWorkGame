@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/test_basic_game.gd" id="1_0"]
+
+[node name="basic_game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopRow" type="HBoxContainer" parent="./VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StaminaText" type="Label" parent="./VBoxContainer/TopRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "体力值："
+
+[node name="AgeText" type="Label" parent="./VBoxContainer/TopRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "年龄："
+
+[node name="TimeText" type="Label" parent="./VBoxContainer/TopRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "时间："
+
+[node name="MoneyText" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -60.0
+offset_right = 120.0
+offset_bottom = -20.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "金钱数："
+
+[node name="WorkButton" type="Button" parent="."]
+custom_minimum_size = Vector2(240, 240)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "工作"

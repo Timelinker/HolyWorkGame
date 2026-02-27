@@ -1,0 +1,310 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdtigk8alr5lb"]
+
+[ext_resource type="Script" uid="uid://igdo3a8l0gcx" path="res://scripts/WorkLogic.gd" id="1_74dy8"]
+[ext_resource type="Texture2D" uid="uid://cquytblpbvcw5" path="res://resources/MainBG.png" id="2_1ra88"]
+[ext_resource type="PackedScene" uid="uid://imqk2lwi0284" path="res://scenes/ui/shop/shop_popup.tscn" id="2_7b1d8"]
+[ext_resource type="Script" uid="uid://ur4gkluv62nl" path="res://scripts/ui/shop/shop_manager.gd" id="3_4c7e5"]
+[ext_resource type="Script" uid="uid://4ndp1nwedvlo" path="res://scripts/ui/food/food_list.gd" id="4_5c8f9"]
+[ext_resource type="PackedScene" uid="uid://b2h3laqs02ngn" path="res://scenes/ui/notification/notification_popup.tscn" id="5_5c8f9"]
+[ext_resource type="PackedScene" uid="uid://bjbb8cdy4mbbm" path="res://scenes/ui/bank/bank_popup_with_notification.tscn" id="6_5c8f9"]
+
+[node name="mainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_74dy8")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1ra88")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="SafeArea2D" type="SafeArea2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = null
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SafeArea2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopInfo" type="VBoxContainer" parent="SafeArea2D/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TopRow1" type="HBoxContainer" parent="SafeArea2D/VBoxContainer/TopInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StaminaText" type="Label" parent="SafeArea2D/VBoxContainer/TopInfo/TopRow1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "体力值："
+
+[node name="AgeText" type="Label" parent="SafeArea2D/VBoxContainer/TopInfo/TopRow1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "年龄："
+
+[node name="TimeText" type="Label" parent="SafeArea2D/VBoxContainer/TopInfo/TopRow1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "时间："
+
+[node name="TopRow2" type="HBoxContainer" parent="SafeArea2D/VBoxContainer/TopInfo"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="JobLevelText" type="Label" parent="SafeArea2D/VBoxContainer/TopInfo/TopRow2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "职级："
+
+[node name="SalaryText" type="Label" parent="SafeArea2D/VBoxContainer/TopInfo/TopRow2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "薪资："
+
+[node name="ExpText" type="Label" parent="SafeArea2D/VBoxContainer/TopInfo/TopRow2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "经验："
+
+[node name="DailyConsumptionText" type="Label" parent="SafeArea2D/VBoxContainer/TopInfo/TopRow2"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "每日消耗："
+
+[node name="DailyRepaymentText" type="Label" parent="SafeArea2D/VBoxContainer/TopInfo/TopRow2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "每日还款："
+
+[node name="RentText" type="Label" parent="SafeArea2D/VBoxContainer/TopInfo/TopRow2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "房租："
+
+[node name="MoneyText" type="Label" parent="SafeArea2D"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -60.0
+offset_right = 120.0
+offset_bottom = -20.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "金钱数："
+
+[node name="WorkButton" type="Button" parent="SafeArea2D"]
+custom_minimum_size = Vector2(240, 240)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -62.0
+offset_right = 150.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "工作"
+
+[node name="FoodList" type="Panel" parent="SafeArea2D"]
+offset_left = 887.0
+offset_top = 480.0
+offset_right = 1147.0
+offset_bottom = 620.0
+script = ExtResource("4_5c8f9")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SafeArea2D/FoodList"]
+layout_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FoodItems" type="VBoxContainer" parent="SafeArea2D/FoodList/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="FoodItem1" type="HBoxContainer" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name1" type="Label" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "浏阳蒸菜"
+
+[node name="Desc1" type="Label" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "+25体力"
+
+[node name="Price1" type="Label" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "15元"
+
+[node name="BuyButton1" type="Button" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem1"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 16
+text = "购买"
+
+[node name="FoodItem2" type="HBoxContainer" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name2" type="Label" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "789外卖"
+
+[node name="Desc2" type="Label" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "+50体力"
+
+[node name="Price2" type="Label" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "30元"
+
+[node name="BuyButton2" type="Button" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem2"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 16
+text = "购买"
+
+[node name="FoodItem3" type="HBoxContainer" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name3" type="Label" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "日料"
+
+[node name="Desc3" type="Label" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "+100体力"
+
+[node name="Price3" type="Label" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "50元"
+
+[node name="BuyButton3" type="Button" parent="SafeArea2D/FoodList/VBoxContainer/FoodItems/FoodItem3"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 16
+text = "购买"
+
+[node name="ShopButton" type="Button" parent="SafeArea2D"]
+custom_minimum_size = Vector2(60, 60)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -265.0
+offset_right = -45.0
+offset_bottom = -205.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "心愿"
+
+[node name="BankButton" type="Button" parent="SafeArea2D"]
+custom_minimum_size = Vector2(60, 60)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -335.0
+offset_right = -45.0
+offset_bottom = -275.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "银行"
+
+[node name="ShopPopup" parent="SafeArea2D" instance=ExtResource("2_7b1d8")]
+visible = false
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="NotificationPopup" parent="SafeArea2D" instance=ExtResource("5_5c8f9")]
+visible = false
+
+[node name="BankPopup" parent="SafeArea2D" instance=ExtResource("6_5c8f9")]
+visible = false
+
+[node name="StaminaWarningBar" type="ColorRect" parent="SafeArea2D"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -30.0
+offset_right = 200.0
+offset_bottom = 30.0
+color = Color(0.2, 0.2, 0.2, 0.8)
+
+[node name="WarningLabel" type="Label" parent="SafeArea2D/StaminaWarningBar"]
+layout_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "体力不足，请购买食物"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShopManager" type="Node2D" parent="."]
+script = ExtResource("3_4c7e5")
