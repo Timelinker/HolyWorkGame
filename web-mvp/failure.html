@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HolyWork — 结算失败</title>
+<style>
+:root{--ink:#245d78;--blue:#55c4e5;--deep:#397f9e;--red:#ef6d61;--yellow:#ffd45c;--green:#67cf59;--paper:#eaf8ff}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{display:grid;place-items:center;background:#173e52;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;color:var(--ink)}
+.page{width:min(100vw,56.25svh);height:min(100svh,177.777vw);aspect-ratio:9/16;display:flex;flex-direction:column;overflow:hidden;border:4px solid #fff;border-radius:20px;background:linear-gradient(180deg,#55c4e5,#318bab);box-shadow:0 0 0 2px #245d78,0 24px 80px rgba(0,0,0,.5)}
+.top{flex:0 0 auto;padding:18px 17px 13px;border-bottom:3px solid #fff;background:linear-gradient(145deg,#f78b78,#e95850);color:#fff;text-shadow:0 2px 0 rgba(126,47,43,.42)}
+.badge{display:inline-block;padding:5px 9px;border:2px solid #fff;border-radius:9px;background:#ffd45c;color:#9d492c;font-size:10px;font-weight:900;box-shadow:0 3px 0 #bd7530}
+h1{margin:14px 0 5px;font-size:39px;line-height:.9;letter-spacing:-.07em}h1 span{display:block;font-size:21px;letter-spacing:-.03em}.reason{margin:0;font-size:11px;font-weight:800;opacity:.9}
+.ledger{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px;background:#4caed2;border-bottom:2px solid #fff}.money{padding:9px 10px;border:2px solid #fff;border-radius:11px;background:#dff5ff;box-shadow:0 3px 0 #347d9c}.money span{display:block;font-size:9px;color:#568096}.money strong{display:block;margin-top:3px;font-size:20px;color:#ef713b;text-shadow:0 1px 0 #fff}
+.deck{position:relative;flex:1;min-height:0;margin:10px;border:3px solid #fff;border-radius:15px;background:#91cbed;box-shadow:0 5px 0 #367d9b;overflow:hidden}.slide{position:absolute;inset:0;display:grid;grid-template-rows:minmax(0,1fr) auto;opacity:0;transform:translateX(9%);pointer-events:none;transition:opacity .5s ease,transform .5s ease}.slide.active{opacity:1;transform:translateX(0);pointer-events:auto}.slide img{width:100%;height:100%;min-height:0;object-fit:cover;background:#163749}.caption{min-height:88px;margin:0;padding:13px 14px 14px;background:rgba(234,248,255,.97);border-top:3px solid #fff;font-size:19px;font-weight:950;line-height:1.12;letter-spacing:-.035em;display:flex;align-items:center}.caption em{color:#ef6d61;font-style:normal}
+.controls{flex:0 0 auto;padding:0 12px 12px}.dots{display:flex;justify-content:center;gap:8px;margin:1px 0 10px}.dot{width:9px;height:9px;padding:0;border:2px solid #fff;border-radius:50%;background:#438aa8;cursor:pointer}.dot.active{width:27px;border-radius:8px;background:#ffd45c}.progress{height:5px;margin-bottom:10px;border-radius:5px;background:#367d9b;overflow:hidden}.progress span{display:block;height:100%;width:0;background:#ffd45c;animation:fill 4.5s linear}.actions{display:grid;grid-template-columns:1fr auto;gap:8px}.actions button,.actions a{min-height:42px;display:grid;place-items:center;padding:8px 12px;border:2px solid #fff;border-radius:10px;background:linear-gradient(#8ce779,#5fc954);box-shadow:0 4px 0 #3e9239;color:#fff;text-decoration:none;font-weight:900;font-size:12px;cursor:pointer}.actions button{background:linear-gradient(#ffe779,#ffc937);box-shadow:0 4px 0 #c69e1c;color:#35657a}
+@keyframes fill{to{width:100%}}@media(max-height:700px){.top{padding:12px 14px 9px}h1{margin:9px 0 3px;font-size:31px}.ledger{padding:7px}.money{padding:6px 8px}.money strong{font-size:17px}.deck{margin:7px}.caption{min-height:67px;padding:9px 11px;font-size:16px}.controls{padding-bottom:8px}.actions button,.actions a{min-height:36px}.dots{margin-bottom:7px}}
+@media(prefers-reduced-motion:reduce){.slide{transition:none}.progress span{animation:none;width:100%}}
+</style>
+</head>
+<body>
+<main class="page">
+ <header class="top"><span class="badge">结算失败</span><h1><span>放弃这个</span>垃圾游戏吧。</h1><p class="reason" id="reason">月底结算失败</p></header>
+ <section class="ledger"><div class="money"><span>本次扣除</span><strong id="total">¥0</strong></div><div class="money"><span>账户剩余</span><strong id="cash">¥0</strong></div></section>
+ <section class="deck" aria-live="polite">
+  <article class="slide active"><img src="assets/failure-galgame-winter-v1.png" alt="雪夜里红发与黑发双女主的视觉小说画面"><p class="caption">不建议重开，去玩<em>旮旯盖木</em>。</p></article>
+  <article class="slide"><img src="assets/failure-pixel-farm-v1.png" alt="夕阳下的像素田园与农场"><p class="caption">去玩<em>某露谷</em>，种点不需要写周报的东西。</p></article>
+  <article class="slide"><img src="assets/failure-starsea-v1.png" alt="银河与巨大星际工程"><p class="caption">去<em>追寻群星</em>，把 KPI 留在地球。</p></article>
+  <article class="slide"><img src="assets/failure-talkshow-v1.png" alt="女玩家站在舞台上表演脱口秀"><p class="caption">哪怕去玩 <em>talk show</em>，都比这个好玩！</p></article>
+ </section>
+ <section class="controls"><div class="dots" id="dots"></div><div class="progress"><span id="progress"></span></div><div class="actions"><button id="next">下一张</button><a href="index.html" id="restart">我偏要重开</a></div></section>
+</main>
+<script>
+const money=v=>{v=Number(v)||0;if(Math.abs(v)>=1e6)return`${v<0?"-":""}¥${(Math.abs(v)/1e6).toFixed(2)}M`;if(Math.abs(v)>=1e4)return`${v<0?"-":""}¥${(Math.abs(v)/1e4).toFixed(1)}W`;return`${v<0?"-":""}¥${Math.round(Math.abs(v)).toLocaleString("zh-CN")}`};
+const query=new URLSearchParams(location.search);let data={};try{data=JSON.parse(sessionStorage.getItem("holywork-failure")||"{}")}catch(e){}
+const total=data.total??query.get("total")??0,cash=data.cash??query.get("cash")??0,reason=data.reason??query.get("reason")??"月底结算失败";
+document.getElementById("total").textContent=money(total);document.getElementById("cash").textContent=money(cash);document.getElementById("reason").textContent=reason;
+const slides=[...document.querySelectorAll(".slide")],dots=document.getElementById("dots"),progress=document.getElementById("progress");let active=0,timer;
+slides.forEach((_,i)=>{const b=document.createElement("button");b.className="dot"+(i?"":" active");b.setAttribute("aria-label",`查看第 ${i+1} 张`);b.onclick=()=>show(i);dots.appendChild(b)});
+function show(i){active=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle("active",n===active));[...dots.children].forEach((d,n)=>d.classList.toggle("active",n===active));progress.style.animation="none";void progress.offsetWidth;progress.style.animation="fill 4.5s linear";clearTimeout(timer);timer=setTimeout(()=>show(active+1),4500)}
+document.getElementById("next").onclick=()=>show(active+1);document.getElementById("restart").onclick=()=>sessionStorage.removeItem("holywork-failure");show(0);
+</script>
+</body>
+</html>
