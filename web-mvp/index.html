@@ -39,6 +39,75 @@ html,body{width:100%;height:100%;overflow:hidden}body{display:grid;place-items:c
 .burst{--drift:0px;--tilt:0deg;min-width:max-content;padding:4px 9px;border:2px solid #fff;border-radius:12px;background:linear-gradient(#ffe77b,#ffc72e);color:#b34d25;font:1000 22px/1 ui-monospace,Consolas,monospace;letter-spacing:-.05em;text-shadow:0 1px 0 #fff;box-shadow:0 4px 0 #d58e23,0 7px 13px rgba(30,88,112,.38);animation:money-pop .92s cubic-bezier(.18,.75,.25,1) forwards}
 .burst:after{content:"✦";position:absolute;right:-9px;top:-11px;color:#fff8b8;font-size:18px;text-shadow:0 2px 0 #e49324}
 @keyframes money-pop{0%{transform:translate(-50%,-5%) scale(.55) rotate(var(--tilt));opacity:0}14%{transform:translate(-50%,-28%) scale(1.2) rotate(var(--tilt));opacity:1}62%{opacity:1}100%{transform:translate(calc(-50% + var(--drift)),-118px) scale(1.04) rotate(var(--tilt));opacity:0}}
+.panel-expand{display:none}
+@media(max-width:520px){
+ html,body{width:100%;height:100%;min-height:0;overflow:hidden}
+ body{display:block;background:#43bddf}
+ .shell{width:100%;max-width:480px;height:100dvh;min-height:0;margin:0 auto;aspect-ratio:auto;border:0;border-radius:0;box-shadow:none}
+ .topbar{flex:0 0 44px;height:44px;padding:0 8px;gap:6px}
+ .brand{gap:5px;font-size:11px;letter-spacing:.04em}.brand-mark{width:25px;height:25px}
+ .home-status{flex:1;max-width:none;padding:4px 5px;font-size:7px;line-height:1.15}
+ .reset{flex:0 0 auto;padding:5px 7px;font-size:8px}
+ .hero{flex:0 0 52px;height:52px;display:grid;grid-template-columns:minmax(0,46%) minmax(0,54%);align-items:center;gap:5px;padding:5px 9px}
+ .eyebrow{max-width:none;margin:0;font-size:7px;line-height:1.3;letter-spacing:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .hero h1{max-width:none;margin:0;font-size:19px;line-height:.97;letter-spacing:-.045em;text-align:right;overflow:hidden}
+ .room-showcase{flex:0 0 128px;height:128px;margin:6px 6px 0;border-width:3px;border-radius:13px}
+ .room-hint{left:6px;top:5px;max-width:78%;padding:4px 7px;font-size:7px;line-height:1.2}
+ .grid{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:168px minmax(220px,1fr);gap:5px;padding:5px}
+ .panel,.work-zone{border-width:2px!important;border-radius:12px;box-shadow:0 3px 0 #438aa8}
+ .panel{min-width:0;min-height:0;padding:8px}
+ .desire,.bills{grid-row:1;overflow:clip}
+ .desire{grid-column:1}.bills{grid-column:2}
+ .panel-label{height:27px;margin:-8px -8px 6px;padding:5px 6px;gap:4px;align-items:center;font-size:7px;white-space:nowrap}
+ .panel-label>span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
+ .panel-expand{display:inline-grid;place-items:center;min-width:31px;height:19px;margin-left:auto;padding:0 5px;border:1px solid #fff;border-radius:7px;background:#ffd45c;color:#35657a;font-size:7px;font-weight:900;box-shadow:0 2px 0 #c69e1c}
+ .desire-icon{display:none}
+ .panel h2{margin:4px 0 3px;font-size:15px;line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .panel p{margin:3px 0;font-size:9px;line-height:1.3}
+ .desire>p{height:24px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .price{margin-top:5px;padding-top:5px}.price span{font-size:8px}.price strong{font-size:17px}
+ .buy{min-height:32px;margin-top:5px;padding:6px 3px;font-size:9px;box-shadow:0 3px 0 #3f983a}
+ .desire-foot,.wish-queue{display:none}
+ .calendar-date{margin:5px 0 2px;font-size:19px;line-height:1}
+ .calendar-meta{font-size:7px}.month-track{height:7px;margin-top:5px;padding:1px}
+ .bill-head{margin-top:5px;padding-top:5px}.bill-head span{font-size:8px}.bill-head strong{font-size:17px}
+ .bill-list{margin-top:3px}.bill-item{padding:3px 0;font-size:7px}
+ .bills:not(.expanded) .bill-item:nth-child(n+3){display:none}
+ .bills:not(.expanded) .bill-list:after{content:attr(data-summary);display:block;padding-top:3px;color:#568096;font-size:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .bills:not(.expanded) .reserve,.bills:not(.expanded) .shortfall,.bills:not(.expanded) .nature-note{display:none}
+ .work-zone{grid-column:1/-1;grid-row:2;min-height:0;padding:6px 9px 7px;justify-content:center}
+ .work-zone:before{font-size:106px}
+ .level-stamp{right:7px;top:6px;padding:3px 6px;font-size:7px}
+ .cash span{font-size:7px}.cash strong{font-size:29px}.cash small{font-size:7px}
+ .stage{width:132px;height:132px;margin:1px 0 0}.work{width:108px;height:108px;border-width:3px;box-shadow:0 6px 0 #bd4b43,0 9px 0 #fff,0 13px 20px rgba(36,93,120,.25)}
+ .work b{font-size:34px}.work span{font-size:7px}.key{margin-top:4px;padding:2px 5px}
+ .career-progress{width:88%;margin-top:1px}.career-row{font-size:7px}.career-track{height:5px;margin-top:3px}
+ .status{min-height:20px;max-height:22px;margin-top:3px;font-size:7px;line-height:1.35;overflow:hidden}
+ .event-card{left:6px;top:48px;width:68%;gap:5px}.event-avatar{flex-basis:27px;width:27px;height:27px;font-size:8px}.event-bubble{padding:5px 6px;font-size:7px;line-height:1.3}.event-role{font-size:6px}
+ .shell footer{flex:0 0 24px;min-height:24px;padding:0 8px;font-size:6px;white-space:nowrap;overflow:hidden}.shell footer span:last-child{display:none}
+ body.panel-open:before{content:"";position:fixed;z-index:34;inset:0;background:rgba(28,84,108,.72);backdrop-filter:blur(3px)}
+ .panel.expanded{position:fixed;z-index:35;inset:max(10px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom));width:auto;height:auto;max-width:440px;margin:auto;padding:12px;overflow-y:auto!important;overscroll-behavior:contain;border-width:3px!important;border-radius:15px;background:#e2f6ff;box-shadow:0 7px 0 #367d9b}
+ .panel.expanded .panel-label{position:sticky;z-index:2;top:-12px;height:36px;margin:-12px -12px 12px;padding:7px 9px;font-size:10px}
+ .panel.expanded .panel-expand{height:24px;min-width:46px;font-size:9px}
+ .panel.expanded .desire-icon{display:grid;width:45px;height:45px;margin:10px 0;font-size:18px}
+ .panel.expanded h2{font-size:24px;white-space:normal;overflow:visible}
+ .panel.expanded p{height:auto;font-size:12px;display:block;overflow:visible}
+ .panel.expanded .price{margin-top:14px;padding-top:10px}.panel.expanded .price strong{font-size:24px}
+ .panel.expanded .buy{min-height:42px;margin-top:10px;font-size:12px}
+ .panel.expanded .desire-foot,.panel.expanded .wish-queue{display:block}
+ .panel.expanded .calendar-date{font-size:34px}.panel.expanded .calendar-meta{font-size:10px}
+ .panel.expanded .month-track{height:10px;margin-top:10px}.panel.expanded .bill-head{margin-top:14px;padding-top:10px}
+ .panel.expanded .bill-head strong{font-size:25px}.panel.expanded .bill-item{display:flex;padding:8px 0;font-size:11px}
+ .panel.expanded .bill-list:after{display:none}.panel.expanded .reserve,.panel.expanded .shortfall,.panel.expanded .nature-note{display:flex}
+}
+@media(max-width:360px),(max-height:640px){
+ .topbar{flex-basis:40px;height:40px}.brand{font-size:10px}.brand-mark{width:23px;height:23px}
+ .hero{flex-basis:46px;height:46px}.hero h1{font-size:17px}
+ .room-showcase{flex-basis:108px;height:108px}
+ .grid{grid-template-rows:156px minmax(202px,1fr)}
+ .stage{width:116px;height:116px}.work{width:96px;height:96px}.work b{font-size:31px}
+ .cash strong{font-size:26px}.shell footer{display:none}
+}
 </style>
 </head>
 <body>
@@ -47,9 +116,9 @@ html,body{width:100%;height:100%;overflow:hidden}body{display:grid;place-items:c
 <section class="hero"><p class="eyebrow" id="career"></p><h1 id="heroLine">再努力一点，<br><em>生活就会开始。</em></h1></section>
 <section class="room-showcase"><div class="life-scene" id="lifeScene" data-home="0" aria-hidden="true"><div class="scene-wall"></div><div class="scene-floor"></div><div class="scene-window"></div><div class="scene-crack"></div><div class="scene-bulb"></div><div class="scene-bed"></div><div class="scene-boxes"></div><div class="scene-rug"></div><div class="scene-sofa"></div><div class="scene-table"></div><div class="scene-lamp"></div><div class="scene-plant"></div><div class="scene-shelf"></div></div><span class="room-hint">我的住所 · 随居住心愿整体更换</span></section>
 <section class="grid">
-<aside class="panel desire"><div class="panel-label"><span>当前心愿</span><span id="desireNo"></span></div><div class="desire-icon" id="desireIcon"></div><h2 id="desireName"></h2><p id="desireNote"></p><div class="price"><span id="priceLabel">一次性支出</span><strong id="desireCost"></strong></div><button class="buy" id="buy"></button><div class="desire-foot" id="desireFoot"></div><div class="wish-queue" id="wishQueue"></div></aside>
+<aside class="panel desire" id="desirePanel"><div class="panel-label"><span>当前心愿</span><span id="desireNo"></span><button class="panel-expand" data-panel="desirePanel" aria-expanded="false">详情</button></div><div class="desire-icon" id="desireIcon"></div><h2 id="desireName"></h2><p id="desireNote"></p><div class="price"><span id="priceLabel">一次性支出</span><strong id="desireCost"></strong></div><button class="buy" id="buy"></button><div class="desire-foot" id="desireFoot"></div><div class="wish-queue" id="wishQueue"></div></aside>
 <section class="work-zone"><div class="event-card" id="eventCard"><div class="event-avatar" id="eventAvatar"></div><div class="event-bubble"><span class="event-role" id="eventRole"></span><span id="eventText"></span></div></div><div class="level-stamp" id="levelStamp"></div><div class="cash"><span>账户余额</span><strong id="cash"></strong><small id="wage"></small></div><div class="stage"><div class="ring one"></div><div class="ring two"></div><button class="work" id="work" aria-label="点击工作挣钱"><span>证明价值</span><b>工作</b><span class="key">CLICK / SPACE</span></button></div><div class="career-progress"><div class="career-row"><span id="careerNow"></span><span id="careerNext"></span></div><div class="career-track"><div id="careerBar"></div></div></div><div class="status" id="status"></div></section>
-<aside class="panel bills"><div class="panel-label"><span>时间与账单</span><span id="daysLeft"></span></div><div class="calendar-date" id="date"></div><div class="calendar-meta"><span id="age"></span><span>1秒 = 12天</span></div><div class="month-track"><div id="monthBar"></div></div><div class="bill-head"><span>本月底应付</span><strong id="billTotal"></strong></div><div class="bill-list" id="billList"></div><div class="reserve"><span>月底最低结余</span><strong>¥3,000</strong></div><div class="shortfall" id="shortfall"></div><p class="nature-note" id="natureNote"></p></aside>
+<aside class="panel bills" id="billsPanel"><div class="panel-label"><span>时间与账单</span><span id="daysLeft"></span><button class="panel-expand" data-panel="billsPanel" aria-expanded="false">明细</button></div><div class="calendar-date" id="date"></div><div class="calendar-meta"><span id="age"></span><span>1秒 = 12天</span></div><div class="month-track"><div id="monthBar"></div></div><div class="bill-head"><span>本月底应付</span><strong id="billTotal"></strong></div><div class="bill-list" id="billList"></div><div class="reserve"><span>月底最低结余</span><strong>¥3,000</strong></div><div class="shortfall" id="shortfall"></div><p class="nature-note" id="natureNote"></p></aside>
 </section>
 <footer><span>“职级只是工牌上的数字，季节才是真的时间。”</span><span>工资会涨 · 账单会涨 · 窗外仍有风</span></footer>
 </main>
@@ -143,9 +212,11 @@ function draw(){const l=level(),d=desire(),rows=billRows(),total=billTotal(),lef
  $("career").textContent=`${l.now.title} · 职级 ${l.now.rank} · 模拟年薪 ${money(l.now.annual)}`;$("heroLine").innerHTML=hero();$("cash").textContent=money(s.cash);$("wage").textContent=`点击一次 +${money(l.now.salary)} · 累计 ${s.clicks.toLocaleString("zh-CN")} 次`;$("levelStamp").textContent=`职级 ${l.now.rank}`;$("careerNow").textContent=`当前 ${l.now.rank} / 年薪 ${money(l.now.annual)}`;$("careerNext").textContent=next?`还需 ${next.at-s.clicks} 次晋升 ${next.rank}`:"职级仍可继续，意义没有增加";$("careerBar").style.width=`${Math.min(100,done/range*100)}%`;
  $("desireNo").textContent=`NO.${String(s.fulfilled+1).padStart(3,"0")}`;$("desireIcon").textContent=d.icon;$("desireName").textContent=d.name;$("desireNote").textContent=d.note;$("priceLabel").textContent=d.upfront||"一次性支出";$("desireCost").textContent=money(d.cost);$("buy").disabled=s.cash<d.cost||s.lost;$("buy").textContent=s.cash>=d.cost?(d.upfront?"支付首付":"实现这个心愿"):`还差 ${money(d.cost-s.cash)}`;$("desireFoot").textContent=d.upfront?`${d.upfront} ${money(d.cost)}；${d.bill[0]} ${money(d.bill[1])} / 月`:d.replaceBill?`实现后，${d.bill[0]}调整为 ${money(d.bill[1])} / 月`:d.bill?`实现后，每月新增：${d.bill[0]} ${money(d.bill[1])}`:"这一次，不会新增账单。也许。";
  const upcoming=DESIRES.slice(s.fulfilled+1,s.fulfilled+4);$("wishQueue").innerHTML=`<div class="wish-queue-title">接下来的心愿</div>`+(upcoming.length?upcoming.map((x,i)=>`<div class="wish-next"><i>${s.fulfilled+i+2}</i><b>${x.name}</b><span>${x.upfront?`首付 ${money(x.cost)} · 月供 ${money(x.bill[1])}`:x.replaceBill?`${money(x.cost)} · 房租 ${money(x.bill[1])}/月`:money(x.cost)}</span></div>`).join(""):`<div class="wish-next"><i>∞</i><b>更多尚未命名的欲望</b><span>持续生成</span></div>`);
- $("date").textContent=`${s.date.getFullYear()}.${String(s.date.getMonth()+1).padStart(2,"0")}.${String(s.date.getDate()).padStart(2,"0")}`;$("age").textContent=`${25+s.date.getFullYear()-2019} 岁`;$("daysLeft").textContent=`距结算 ${left} 天`;$("daysLeft").className=left<=5?"danger":"";$("monthBar").style.width=`${s.date.getDate()/monthDays()*100}%`;$("billTotal").textContent=money(total);$("billList").innerHTML=rows.map(x=>`<div class="bill-item"><span>${x.name}</span><b>${money(x.value)}</b></div>`).join("");$("shortfall").textContent=need?`月底安全线还差 ${money(need)}`:"本月暂时安全，但下个月还会来。";$("natureNote").textContent=season();$("status").textContent=s.message;drawScene()
+ $("date").textContent=`${s.date.getFullYear()}.${String(s.date.getMonth()+1).padStart(2,"0")}.${String(s.date.getDate()).padStart(2,"0")}`;$("age").textContent=`${25+s.date.getFullYear()-2019} 岁`;$("daysLeft").textContent=`距结算 ${left} 天`;$("daysLeft").className=left<=5?"danger":"";$("monthBar").style.width=`${s.date.getDate()/monthDays()*100}%`;$("billTotal").textContent=money(total);$("billList").innerHTML=rows.map(x=>`<div class="bill-item"><span>${x.name}</span><b>${money(x.value)}</b></div>`).join("");$("billList").dataset.summary=`共 ${rows.length} 项 · 点右上角看明细`;$("shortfall").textContent=need?`月底安全线还差 ${money(need)}`:"本月暂时安全，但下个月还会来。";$("natureNote").textContent=season();$("status").textContent=s.message;drawScene()
 }
-function work(e){if(s.lost||currentChoice)return;const l=level();s.cash+=l.now.salary;s.clicks++;const b=document.createElement("i"),r=$("work").getBoundingClientRect(),x=e&&e.clientX?e.clientX-r.left:r.width/2,y=e&&e.clientY?e.clientY-r.top:r.height/2;b.className="burst";b.textContent=`+${money(l.now.salary)}`;b.style.left=x+"px";b.style.top=y+"px";b.style.setProperty("--drift",`${Math.round(Math.random()*44-22)}px`);b.style.setProperty("--tilt",`${Math.round(Math.random()*10-5)}deg`);$("work").appendChild(b);setTimeout(()=>b.remove(),950);if(s.clicks>=s.nextEvent){showEvent();s.nextEvent+=8+Math.floor(Math.random()*14)}const after=level();if(after.i>l.i)s.message=`晋升 ${after.now.rank}。工资涨了，账单没有消失。`;if(s.clicks>=s.nextChoiceEvent)showChoiceEvent();checkSuccess();draw()}
+function panelIsOpen(){return document.body.classList.contains("panel-open")}
+function togglePanel(id){const target=$(id),willOpen=!target.classList.contains("expanded");document.querySelectorAll(".panel.expanded").forEach(x=>x.classList.remove("expanded"));document.querySelectorAll(".panel-expand").forEach(x=>{x.textContent=x.dataset.panel==="billsPanel"?"明细":"详情";x.setAttribute("aria-expanded","false")});target.classList.toggle("expanded",willOpen);document.body.classList.toggle("panel-open",willOpen);const button=target.querySelector(".panel-expand");if(willOpen){button.textContent="关闭";button.setAttribute("aria-expanded","true");target.scrollTop=0}}
+function work(e){if(s.lost||currentChoice||panelIsOpen())return;const l=level();s.cash+=l.now.salary;s.clicks++;const b=document.createElement("i"),r=$("work").getBoundingClientRect(),x=e&&e.clientX?e.clientX-r.left:r.width/2,y=e&&e.clientY?e.clientY-r.top:r.height/2;b.className="burst";b.textContent=`+${money(l.now.salary)}`;b.style.left=x+"px";b.style.top=y+"px";b.style.setProperty("--drift",`${Math.round(Math.random()*44-22)}px`);b.style.setProperty("--tilt",`${Math.round(Math.random()*10-5)}deg`);$("work").appendChild(b);setTimeout(()=>b.remove(),950);if(s.clicks>=s.nextEvent){showEvent();s.nextEvent+=8+Math.floor(Math.random()*14)}const after=level();if(after.i>l.i)s.message=`晋升 ${after.now.rank}。工资涨了，账单没有消失。`;if(s.clicks>=s.nextChoiceEvent)showChoiceEvent();checkSuccess();draw()}
 function buy(){if(s.lost)return;const d=desire();if(s.cash<d.cost)return;s.cash-=d.cost;s.fulfilled++;if(d.replaceBill)s.bills=s.bills.filter(x=>x.name!==d.replaceBill);if(d.id==="home")s.bills=s.bills.filter(x=>x.name!=="房租");if(d.bill)s.bills.push({name:d.bill[0],base:d.bill[1]});s.message=d.id==="home"?"房租消失了，住房月供接管了你接下来的生活。":d.replaceBill?`居住条件变好了，房租涨到 ${money(d.bill[1])} / 月。`:d.icon==="田"?"你买下了一小块田。明天，仍然要回公司。":"心愿实现。新的长期支出已经生效。";checkSuccess();draw()}
 function debtMarkup(){const rows=billRows(),total=rows.reduce((a,b)=>a+b.value,0);return rows.map(x=>`<div class="bill-item"><span>${x.name}</span><b>${money(x.value)} / 月</b></div>`).join("")+`<div class="bill-item"><span>每月债务与生活成本</span><b>${money(total)}</b></div>`}
 function goToFailure(reason,total){s.lost=true;clearInterval(timer);const payload={reason,total,cash:s.cash,rank:level().now.rank,fulfilled:s.fulfilled};try{sessionStorage.setItem("holywork-failure",JSON.stringify(payload))}catch(e){}const q=new URLSearchParams({reason,total:String(total),cash:String(s.cash)});location.href=`failure.html?${q}`}
@@ -154,8 +225,8 @@ function showSuccess(){s.lost=true;clearInterval(timer);const l=level();$("endin
 function showAgeFailure(){goToFailure("35岁 · 考核未通过",billTotal())}
 function checkSuccess(){const l=level(),done=DESIRES.slice(0,s.fulfilled);if(s.lost)return true;if(ageNow()>=35){if(l.now.annual>=1000000&&done.some(x=>x.id==="home")&&done.some(x=>x.id==="child2"))showSuccess();else showAgeFailure();return true}return false}
 function settle(){const total=billTotal();s.cash-=total;s.lastBill=total;if(s.cash<3000)showFailure(total);else s.message=`月底扣款 ${money(total)}。你保住了下个月的入场券。`}
-function tick(){if(s.lost||currentChoice)return;const oldMonth=s.date.getMonth();s.date.setDate(s.date.getDate()+12);if(s.date.getMonth()!==oldMonth)settle();if(!s.lost)checkSuccess();draw()}
-function restart(){clearInterval(timer);clearTimeout(eventTimer);currentChoice=null;sceneKey="";s=fresh();$("eventCard").classList.remove("show");$("choiceEvent").hidden=true;$("gameover").hidden=true;timer=setInterval(tick,1000);draw()}
-$("work").addEventListener("pointerdown",work);document.addEventListener("keydown",e=>{if(e.code==="Space"&&!e.repeat&&!s.lost&&!currentChoice){e.preventDefault();work(null)}});$("buy").onclick=buy;$("choiceA").onclick=()=>resolveChoice(0);$("choiceB").onclick=()=>resolveChoice(1);$("reset").onclick=restart;$("again").onclick=restart;timer=setInterval(tick,1000);draw();
+function tick(){if(s.lost||currentChoice||panelIsOpen())return;const oldMonth=s.date.getMonth();s.date.setDate(s.date.getDate()+12);if(s.date.getMonth()!==oldMonth)settle();if(!s.lost)checkSuccess();draw()}
+function restart(){clearInterval(timer);clearTimeout(eventTimer);currentChoice=null;sceneKey="";s=fresh();document.body.classList.remove("panel-open");document.querySelectorAll(".panel.expanded").forEach(x=>x.classList.remove("expanded"));$("eventCard").classList.remove("show");$("choiceEvent").hidden=true;$("gameover").hidden=true;timer=setInterval(tick,1000);draw()}
+$("work").addEventListener("pointerdown",work);document.addEventListener("keydown",e=>{if(e.code==="Escape"&&panelIsOpen()){const open=document.querySelector(".panel.expanded");if(open)togglePanel(open.id);return}if(e.code==="Space"&&!e.repeat&&!s.lost&&!currentChoice&&!panelIsOpen()){e.preventDefault();work(null)}});document.querySelectorAll(".panel-expand").forEach(x=>x.onclick=()=>togglePanel(x.dataset.panel));$("buy").onclick=buy;$("choiceA").onclick=()=>resolveChoice(0);$("choiceB").onclick=()=>resolveChoice(1);$("reset").onclick=restart;$("again").onclick=restart;timer=setInterval(tick,1000);draw();
 </script>
 </body></html>
